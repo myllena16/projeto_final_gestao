@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meus Objetivos</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
+:root {
+    --bg: #1E1E1E;
+    --bg2: #2a2a40;
+    --verde: #6FFF57;
+    --branco: #fff;
+    --roxo: #3A375E;
+}
+
+body {
+    margin: 0;
+    font-family: 'Chakra Petch', sans-serif;
+    background: linear-gradient(135deg, var(--bg), var(--bg2));
+    color: var(--branco);
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+}
+
+/* TITULO */
+.titulo {
+    font-size: 32px;
+}
+
+.titulo span {
+    color: var(--verde);
+}
+
+/* ABAS */
+.tabs {
+    display: flex;
+    background: rgba(43,43,69,0.6);
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.tab {
+    flex: 1;
+    padding: 15px;
+    background: transparent;
+    border: none;
+    color: var(--branco);
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.tab:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* LINHA ANIMADA */
+.tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    background: var(--verde);
+    transition: 0.3s;
+}
+
+.tab.ativo::after {
+    width: 100%;
+    left: 0;
+}
+
+/* CARD */
+.card {
+    background: rgba(43,43,69,0.6);
+    padding: 40px;
+    border-radius: 0 0 25px 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* CONTEUDO */
+.conteudo {
+    display: none;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.conteudo.ativo {
+    display: block;
+    animation: aparecer 0.5s ease forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sub {
+    color: var(--verde);
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* TEMPO */
+.tempo {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.bloco {
+    background: rgba(255,255,255,0.05);
+    padding: 12px 15px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 60px;
+    transition: 0.3s;
+}
+
+.bloco:hover {
+    transform: scale(1.1);
+    background: rgba(111,255,87,0.15);
+}
+
+.numero {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* STATUS */
+.status {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 2px solid;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.finalizado {
+    color: #ff4d4d;
+    border-color: #ff4d4d;
+}
+
+/* ANIMAÇÃO LEVE */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<section class="container">
+
+<h1 class="titulo">Meus Objetivos do ano<span>_</span></h1>
+
+<div class="tabs">
+    <button class="tab ativo">Cursos</button>
+    <button class="tab">Projetos</button>
+    <button class="tab">Portfólio</button>
+    <button class="tab">Currículo</button>
+</div>
+
+<div class="card">
+
+<div class="conteudo ativo">
+    <h2>Estudar cursos</h2>
+    <p class="sub">TEMPO PARA COMPLETAR O OBJETIVO</p>
+
+    <div class="tempo">
+        <div class="bloco"><div class="numero">12</div><div class="label">dias</div></div>
+        <div class="bloco"><div class="numero">08</div><div class="label">horas</div></div>
+        <div class="bloco"><div class="numero">30</div><div class="label">min</div></div>
+        <div class="bloco"><div class="numero">10</div><div class="label">seg</div></div>
+    </div>
+
+    <div class="status finalizado">Prazo Finalizado</div>
+</div>
+
+<div class="conteudo">
+    <h2>Criar projetos</h2>
+    <p class="sub">TEMPO PARA COMPLETAR O OBJETIVO</p>
+
+    <div class="tempo">
+        <div class="bloco"><div class="numero">20</div><div class="label">dias</div></div>
+        <div class="bloco"><div class="numero">05</div><div class="label">horas</div></div>
+        <div class="bloco"><div class="numero">10</div><div class="label">min</div></div>
+        <div class="bloco"><div class="numero">00</div><div class="label">seg</div></div>
+    </div>
+</div>
+
+<div class="conteudo">
+    <h2>Portfólio</h2>
+    <p class="sub">TEMPO PARA COMPLETAR O OBJETIVO</p>
+
+    <div class="tempo">
+        <div class="bloco"><div class="numero">30</div><div class="label">dias</div></div>
+        <div class="bloco"><div class="numero">00</div><div class="label">horas</div></div>
+        <div class="bloco"><div class="numero">00</div><div class="label">min</div></div>
+        <div class="bloco"><div class="numero">00</div><div class="label">seg</div></div>
+    </div>
+</div>
+
+<div class="conteudo">
+    <h2>Currículo</h2>
+    <p class="sub">TEMPO PARA COMPLETAR O OBJETIVO</p>
+
+    <div class="tempo">
+        <div class="bloco"><div class="numero">5</div><div class="label">dias</div></div>
+        <div class="bloco"><div class="numero">02</div><div class="label">horas</div></div>
+        <div class="bloco"><div class="numero">00</div><div class="label">min</div></div>
+        <div class="bloco"><div class="numero">00</div><div class="label">seg</div></div>
+    </div>
+</div>
+
+</div>
+
+</section>
+
+<script>
+const tabs = document.querySelectorAll(".tab");
+const conteudos = document.querySelectorAll(".conteudo");
+
+tabs.forEach((tab, i) => {
+    tab.onclick = () => {
+        tabs.forEach(t => t.classList.remove("ativo"));
+        conteudos.forEach(c => c.classList.remove("ativo"));
+
+        tab.classList.add("ativo");
+        conteudos[i].classList.add("ativo");
+    };
+});
+</script>
+
+</body>
+</html>
